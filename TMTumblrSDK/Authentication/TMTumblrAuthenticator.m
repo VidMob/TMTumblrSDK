@@ -111,6 +111,7 @@ NSDictionary *formEncodedDataToDictionary(NSData *data);
         if (SFSafariViewControllerClass) {
             authController = [[SFSafariViewControllerClass alloc] initWithURL:authURL];
             authController.modalPresentationStyle = UIModalPresentationOverFullScreen;
+            authController.modalPresentationCapturesStatusBarAppearance = YES;
             [authController performSelector:@selector(setDelegate:) withObject:self];
         } else {
             TMWebViewController *controller = [[TMWebViewController alloc] initWithURL:authURL];
